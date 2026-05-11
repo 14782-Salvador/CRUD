@@ -128,6 +128,7 @@ public class App {
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Telefone</th>
+                            <th>Nif</th>
                             <th>Ações</th>
                         </tr>
                 """);             
@@ -154,6 +155,7 @@ public class App {
                     html.append("<td>").append(nome).append("</td>");
                     html.append("<td>").append(email).append("</td>");
                     html.append("<td>").append(telefone).append("</td>");
+                    html.append("<td>").append(Nif).append("</td>");
 
                     html.append("<td>");
                     html.append("<a href='/editar?id=").append(id).append("'>Editar</a>");
@@ -217,6 +219,9 @@ public class App {
 
                     Telefone:
                     <input name='telefone'>
+                    
+                    Nif:
+                    <input name='Nif'>
 
                     <button type='submit'>Guardar</button>
                 </form>
@@ -267,6 +272,7 @@ public class App {
                             case "nome": nome = value; break;
                             case "email": email = value; break;
                             case "telefone": telefone = value; break;
+                            case "Nif": Nif = value; break;
                         }
                     }
                 }
@@ -283,6 +289,7 @@ public class App {
                 ps.setString(1, nome);
                 ps.setString(2, email);
                 ps.setString(3, telefone);
+                ps.setString(4, Nif);
 
                 ps.executeUpdate();
 
