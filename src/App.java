@@ -379,6 +379,7 @@ public class App {
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
                 String telefone = rs.getString("telefone");
+                String Nif = rs.getString("Nif");
 
                 html.append("""
                     <html>
@@ -404,6 +405,8 @@ public class App {
                 html.append("Nome:<input name='nome' value='").append(nome).append("' required>");
                 html.append("Email:<input name='email' value='").append(email).append("' required>");
                 html.append("Telefone:<input name='telefone' value='").append(telefone).append("'>");
+                html.append("Nif:<input name='Nif' value='").append(Nif).append("'>");
+
 
                 html.append("""
                     <button type='submit'>Atualizar</button>
@@ -454,6 +457,7 @@ public class App {
                 String nome = "";
                 String email = "";
                 String telefone = "";
+                String Nif = "";
 
                 for (String p : params) {
                     String[] kv = p.split("=");
@@ -467,6 +471,7 @@ public class App {
                             case "nome": nome = value; break;
                             case "email": email = value; break;
                             case "telefone": telefone = value; break;
+                            case "Nif": telefone = value; break;
                         }
                     }
                 }
@@ -486,6 +491,7 @@ public class App {
                 ps.setString(2, email);
                 ps.setString(3, telefone);
                 ps.setInt(4, id);
+                ps.setString(5, Nif);
 
                 ps.executeUpdate();
 
