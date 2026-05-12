@@ -285,7 +285,7 @@ public class App {
                     throw new Exception("Ligação à BD falhou!");
                 }
 
-                String sql = "INSERT INTO clientes(nome,email,telefone) VALUES (?,?,?)";
+                String sql = "INSERT INTO clientes(nome,email,telefone,nif) VALUES (?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
 
                 ps.setString(1, nome);
@@ -473,7 +473,7 @@ public class App {
                             case "nome": nome = value; break;
                             case "email": email = value; break;
                             case "telefone": telefone = value; break;
-                            case "Nif": telefone = value; break;
+                            case "Nif": Nif = value; break;
                         }
                     }
                 }
@@ -486,14 +486,14 @@ public class App {
                     throw new Exception("Ligação à BD falhou!");
                 }
 
-                String sql = "UPDATE clientes SET nome=?, email=?, telefone=? WHERE id=?";
+                String sql = "UPDATE clientes SET nome=?, email=?, telefone=?, nif=? WHERE id=?";
                 PreparedStatement ps = con.prepareStatement(sql);
 
                 ps.setString(1, nome);
                 ps.setString(2, email);
                 ps.setString(3, telefone);
-                ps.setInt(4, id);
-                ps.setString(5, Nif);
+                ps.setString(4, Nif);
+                ps.setInt(5, id);
 
                 ps.executeUpdate();
 
