@@ -8,7 +8,7 @@ public class Cliente {
     public String telefone;
 
 
-    public Cliente(int id, String nome, String email, String telefone) {
+    public Cliente(int id, String nome, String email, String telefone, int Nif) {
 
         this.id = id;
 
@@ -17,6 +17,8 @@ public class Cliente {
         this.email = email;
 
         this.telefone = telefone;
+        
+        this.Nif = Nif;
 
     }
 

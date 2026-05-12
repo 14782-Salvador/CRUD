@@ -149,13 +149,14 @@ public class App {
                     String nome = rs.getString("nome");
                     String email = rs.getString("email");
                     String telefone = rs.getString("telefone");
+                    String nif = rs.getString("nif");
 
                     html.append("<tr>");
                     html.append("<td>").append(id).append("</td>");
                     html.append("<td>").append(nome).append("</td>");
                     html.append("<td>").append(email).append("</td>");
                     html.append("<td>").append(telefone).append("</td>");
-                    html.append("<td>").append(Nif).append("</td>");
+                    html.append("<td>").append(nif).append("</td>");
 
                     html.append("<td>");
                     html.append("<a href='/editar?id=").append(id).append("'>Editar</a>");
@@ -260,6 +261,7 @@ public class App {
                 String nome = "";
                 String email = "";
                 String telefone = "";
+                String Nif = "";
 
                 for (String p : params) {
                     String[] kv = p.split("=");
