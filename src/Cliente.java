@@ -7,8 +7,10 @@ public class Cliente {
 
     public String telefone;
 
+    public String Nif;
 
-    public Cliente(int id, String nome, String email, String telefone, int Nif) {
+
+    public Cliente(int id, String nome, String email, String telefone, String Nif) {
 
         this.id = id;
 
